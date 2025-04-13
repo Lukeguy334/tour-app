@@ -11,14 +11,15 @@ function Gallery({ tours, setTours, onRemove }) {
     try {
       const response = await fetch(url);
       const data = await response.json();
+      console.log("Fetched tours:", data); // Add this
       setTours(data);
       setLoading(false);
     } catch (err) {
-      console.error(err);
+      console.error("Fetch error:", err); // Add this
       setError(true);
       setLoading(false);
     }
-  };
+  };  
 
   useEffect(() => {
     fetchTours();
