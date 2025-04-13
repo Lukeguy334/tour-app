@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import TourCard from "./TourCard";
 
-const url = "https://course-api.com/react-tours-project";
+const url = "https://cors-anywhere.herokuapp.com/https://course-api.com/react-tours-project";
 
 function Gallery({ tours, setTours, onRemove }) {
   const [loading, setLoading] = useState(true);
