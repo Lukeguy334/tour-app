@@ -1,25 +1,14 @@
-import { useState } from "react";
-
-function TourCard({ id, name, info, price, image, onRemove }) {
-  const [readMore, setReadMore] = useState(false);
-
+function TourCard({ id, name, info, image, price, onRemove }) {
   return (
-    <article className="card">
+    <div className="tour-card">
       <img src={image} alt={name} />
-      <div className="card-content">
+      <div className="tour-info">
         <h2>{name}</h2>
-        <h4>${price}</h4>
-        <p>
-          {readMore ? info : `${info.substring(0, 100)}...`}
-          <button className="read-more" onClick={() => setReadMore(!readMore)}>
-            {readMore ? "Show Less" : "Read More"}
-          </button>
-        </p>
-        <button className="btn-remove" onClick={() => onRemove(id)}>
-          Not Interested
-        </button>
+        <h3>${price}</h3>
+        <p>{info}</p>
+        <button onClick={() => onRemove(id)}>Not Interested</button>
       </div>
-    </article>
+    </div>
   );
 }
 
