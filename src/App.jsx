@@ -3,7 +3,7 @@ import Gallery from "./components/Gallery";
 import DestinationSelector from "./components/DestinationSelector";
 import "./styles/styles.css";
 
-// ✅ Step 1: Raw API URL
+// API URL
 const API_URL = "https://course-api.com/react-tours-project";
 
 function App() {
@@ -13,7 +13,6 @@ function App() {
   const [error, setError] = useState(null);
   const [selected, setSelected] = useState("All Destinations");
 
-  // ✅ Step 3: Insert fetchTours() here
   const fetchTours = async () => {
     setLoading(true);
     try {
