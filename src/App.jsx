@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import Gallery from "./components/Gallery";
 import DestinationSelector from "./components/DestinationSelector";
 import "./styles/styles.css";
-
-// API URL
-const API_URL = "https://course-api.com/react-tours-project";
+import mockTours from "./data/tours.json"; // ✅ Import local tour data
 
 function App() {
   // State variables
@@ -13,32 +11,32 @@ function App() {
   const [error, setError] = useState(null);
   const [selected, setSelected] = useState("All Destinations");
 
+  // Use local data instead of external fetch
   const fetchTours = async () => {
     setLoading(true);
     try {
-      const res = await fetch(API_URL);
-      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-      const data = await res.json();
-      setTours(data);
+      // Simulate loading delay
+      await new Promise((res) => setTimeout(res, 500));
+      setTours(mockTours);
       setError(null);
     } catch (err) {
-      console.error("Fetch error:", err);
-      setError("Failed to fetch tours.");
+      console.error("Mock fetch error:", err);
+      setError("Failed to load tours.");
     } finally {
       setLoading(false);
     }
   };
 
-  // Fetch on first render
+  // Load data on first render
   useEffect(() => {
     fetchTours();
   }, []);
 
+  // Remove tour by ID
   const removeTour = (id) => {
     setTours(tours.filter((tour) => tour.id !== id));
   };
 
-  // Render app
   return (
     <main>
       <h1 className="title">Our Tours</h1>
