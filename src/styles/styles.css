@@ -1,38 +1,65 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+/* Global Reset & Base Styles */
+* {
+  box-sizing: border-box;
   margin: 0;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #1a1a1a;
+  padding: 2rem;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Title */
 .title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  text-align: center;
+  color: #222;
 }
 
+/* Selector Styles */
 .selector {
+  text-align: center;
   margin-bottom: 2rem;
 }
 
+.selector label {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.selector select {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Gallery Layout */
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
+/* Tour Card Styles */
 .tour-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 300px;
   overflow: hidden;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease-in-out;
 }
 
 .tour-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .tour-card img {
@@ -47,29 +74,49 @@ body {
 }
 
 .tour-info h2 {
-  margin: 0;
+  font-size: 1.25rem;
+  color: #333;
 }
 
 .tour-info h3 {
-  margin: 0.5rem 0;
-  color: #00aaff;
+  color: #0077cc;
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
 .tour-info p {
   font-size: 0.95rem;
-  color: #444;
+  color: #555;
+  margin-top: 0.75rem;
 }
 
+/* Buttons */
 button {
   margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #ff4d4d;
+  padding: 0.6rem 1rem;
+  background-color: #cc0000;
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 button:hover {
-  background-color: #e60000;
+  background-color: #a80000;
+}
+
+/* Empty Gallery Message */
+.no-tours {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.no-tours h2 {
+  font-size: 1.5rem;
+  color: #444;
+}
+
+.no-tours button {
+  margin-top: 1rem;
 }
