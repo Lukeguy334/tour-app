@@ -1,3 +1,5 @@
+
+// Gallery.jsx
 import TourCard from "./TourCard";
 
 function Gallery({ tours, onRemove, loading, error, selected, fetchTours }) {
@@ -17,7 +19,7 @@ function Gallery({ tours, onRemove, loading, error, selected, fetchTours }) {
       </div>
     );
   }
-
+/// If no tours match the selected destination
   return (
     <section className="gallery">
       {filteredTours.map((tour) => (

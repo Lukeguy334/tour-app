@@ -1,3 +1,4 @@
+// Tour card component
 function TourCard({ id, name, info, image, price, onRemove }) {
   return (
     <div className="tour-card">
